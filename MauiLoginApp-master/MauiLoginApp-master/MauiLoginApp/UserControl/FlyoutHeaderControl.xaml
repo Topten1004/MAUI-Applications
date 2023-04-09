@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLoginApp.UserControl.FlyoutHeaderControl"
+             Title="FlyoutHeaderControl">
+    <StackLayout Padding="10">
+        <Label x:Name="lblUserName" FontSize="20" FontAttributes="Bold" TextColor="#1d8348"/>
+        <Label x:Name="lblUserRole" FontSize="16" TextColor="#1d8348" />
+    </StackLayout>
+</ContentPage>

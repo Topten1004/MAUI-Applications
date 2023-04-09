@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiSampleLogin.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiSampleLogin"
+    xmlns:views="clr-namespace:MauiSampleLogin.Views"
+    BackgroundColor="#00793D">
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate views:MainPage}"
+        FlyoutItemIsVisible="False"
+        Route="MainPage"
+        Shell.FlyoutBehavior="Disabled"
+        Shell.NavBarIsVisible="False" />
+
+    <FlyoutItem Title="Restaurants">
+        <Tab>
+            <ShellContent
+                Title="Restaurants"
+                ContentTemplate="{DataTemplate views:RestaurantsPage}"
+                Route="RestaurantsPage" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Products">
+        <Tab>
+            <ShellContent
+                Title="Products"
+                ContentTemplate="{DataTemplate views:ProductsPage}"
+                Route="ProductsPage" />
+        </Tab>
+    </FlyoutItem>
+
+</Shell>

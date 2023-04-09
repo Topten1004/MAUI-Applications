@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiSampleLogin.Views.CreateAccountPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MauiSampleLogin.ViewModels"
+    Title="Create Account"
+    x:DataType="vm:CreateAccountViewModel"
+    BackgroundColor="#00793D">
+    <Grid RowDefinitions="*,*">
+        <Image HeightRequest="150" Source="logo.png" />
+
+        <Border
+            Grid.Row="1"
+            Margin="0,0,0,-2"
+            BackgroundColor="White">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20,20,0,0" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout
+                Padding="20"
+                Spacing="10"
+                VerticalOptions="Center">
+
+                <Entry
+                    FontSize="Medium"
+                    Placeholder="Name"
+                    Text="{Binding Name}"
+                    TextColor="Black" />
+                <Entry
+                    FontSize="Medium"
+                    Keyboard="Email"
+                    Placeholder="E-mail"
+                    Text="{Binding Email}"
+                    TextColor="Black" />
+                <Entry
+                    FontSize="Medium"
+                    IsPassword="True"
+                    Placeholder="Password"
+                    Text="{Binding Password}"
+                    TextColor="Black" />
+
+                <Button
+                    BackgroundColor="#D95716"
+                    Command="{Binding SaveCommand}"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Text="SAVE"
+                    TextColor="White" />
+
+            </VerticalStackLayout>
+
+        </Border>
+
+    </Grid>
+</ContentPage>

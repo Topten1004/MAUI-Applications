@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiSampleLogin.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MauiSampleLogin.ViewModels"
+    x:DataType="vm:MainViewModel"
+    BackgroundColor="#00793D">
+
+    <Grid RowDefinitions="*,*">
+        <Image HeightRequest="150" Source="logo.png" />
+
+        <Border
+            Grid.Row="1"
+            Margin="0,0,0,-2"
+            BackgroundColor="White">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20,20,0,0" />
+            </Border.StrokeShape>
+
+            <VerticalStackLayout
+                Padding="20"
+                Spacing="20"
+                VerticalOptions="Center">
+                <Entry
+                    FontSize="Medium"
+                    Keyboard="Email"
+                    Placeholder="E-mail"
+                    PlaceholderColor="Black"
+                    Text="{Binding Email}" />
+                <Entry
+                    FontSize="Medium"
+                    IsPassword="True"
+                    Placeholder="Password"
+                    PlaceholderColor="Black"
+                    Text="{Binding Password}" />
+
+                <Grid Margin="0,15,0,0">
+
+                    <Button
+                        BackgroundColor="#D95716"
+                        Command="{Binding LoginCommand}"
+                        CornerRadius="20"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        Text="LOGIN">
+                        <Button.Triggers>
+                            <DataTrigger
+                                Binding="{Binding LoginCommand.IsRunning}"
+                                TargetType="Button"
+                                Value="True">
+                                <Setter Property="Text" Value="" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+
+                    <ActivityIndicator
+                        HorizontalOptions="Center"
+                        IsRunning="{Binding LoginCommand.IsRunning}"
+                        IsVisible="{Binding LoginCommand.IsRunning}"
+                        VerticalOptions="Center"
+                        Color="White" />
+
+                </Grid>
+
+                <Button
+                    BackgroundColor="White"
+                    Command="{Binding CreateAccountCommand}"
+                    FontSize="Medium"
+                    Text="Create Account"
+                    TextColor="#D95716" />
+
+            </VerticalStackLayout>
+
+        </Border>
+
+    </Grid>
+
+</ContentPage>
